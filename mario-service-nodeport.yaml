@@ -1,35 +1,16 @@
-# Please edit the object below. Lines beginning with a '#' will be ignored,
-# and an empty file will abort the edit. If an error occurs while saving this file will be
-# reopened with the relevant failures.
-#
 apiVersion: v1
 kind: Service
 metadata:
-  annotations:
-    kubectl.kubernetes.io/last-applied-configuration: |
-      {"apiVersion":"v1","kind":"Service","metadata":{"annotations":{},"name":"mario-service-nodeport","namespace":"default"},"spec":{"ports":[{"nodePort":30123,"port":80,"protocol":"TCP","targetPort":80}],"selector":{"app":"mario"},"type":"NodePort"}}
-  creationTimestamp: "2025-11-06T03:19:35Z"
   name: mario-service-nodeport
-  namespace: default
-  resourceVersion: "153557"
-  uid: 30126023-9f88-4e31-a959-38fd9c8a86ee
+  namespace: default 
 spec:
-  clusterIP: 100.68.137.169
-  clusterIPs:
-  - 100.68.137.169
   externalTrafficPolicy: Cluster
   internalTrafficPolicy: Cluster
-  ipFamilies:
-  - IPv4
-  ipFamilyPolicy: SingleStack
   ports:
-  - nodePort: 30123
+  - nodePort: 30333
     port: 80
-    protocol: TCP
     targetPort: 80
   selector:
     app: mario
   sessionAffinity: None
   type: NodePort
-status:
-  loadBalancer: {}
